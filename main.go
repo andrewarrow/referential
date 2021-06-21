@@ -30,7 +30,7 @@ func main() {
 	// get a copy from someone who already did that
 	cloutcli.PrintAllPostsFromBadger("../acopy/badgerdb")
 
-	// case 4, import parts of that complete basgerdb database into a local
+	// case 4, import parts of that complete badgerdb database into a local
 	// sqlite database first, then query that sqlite database
 
 	// case 5, username with write access
