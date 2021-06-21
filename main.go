@@ -12,7 +12,7 @@ func main() {
 	list := cloutcli.GlobalPosts()
 
 	for _, post := range list {
-		fmt.Println(post)
+		fmt.Println(post.Body)
 	}
 
 }
