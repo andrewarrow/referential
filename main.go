@@ -25,6 +25,7 @@ func main() {
 		fmt.Println("./referential --case3")
 		fmt.Println("./referential --case4a")
 		fmt.Println("./referential --case4b")
+		fmt.Println("./referential --case5")
 		fmt.Println("")
 		return
 	}
@@ -80,8 +81,8 @@ func main() {
 			fmt.Println("CLOUTCLI_SEED_WORDS not found.")
 			return
 		}
-		//result := cloutcli.SimplePost(words, "hey @andrewarrow this post was done from terminal using https://github.com/andrewarrow/referential")
-		//fmt.Println(result)
+		result := cloutcli.SimplePost(words, "hey @andrewarrow this post was done from terminal using https://github.com/andrewarrow/referential")
+		fmt.Println(result)
 	}
 
 }
