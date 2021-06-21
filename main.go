@@ -23,6 +23,7 @@ func main() {
 		fmt.Println("./referential --case1")
 		fmt.Println("./referential --case2")
 		fmt.Println("./referential --case3")
+		fmt.Println("./referential --case4")
 		fmt.Println("")
 		return
 	}
@@ -49,10 +50,12 @@ func main() {
 		// you'll have to spend 24 hours first downloading it or
 		// get a copy from someone who already did that
 		cloutcli.PrintAllPostsFromBadger("../acopy/badgerdb")
+	} else if flavor == "--case4" {
+		// case 4, import parts of that complete badgerdb database into a local
+		// sqlite database first, then query that sqlite database
+		cloutcli.ImportFromBadgerToSqlite("../acopy/badgerdb")
+		cloutcli.QuerySqlitePosts("andrew")
 	}
-
-	// case 4, import parts of that complete badgerdb database into a local
-	// sqlite database first, then query that sqlite database
 
 	// case 5, username with write access
 	// to post a message or send coin, cli needs private key i.e seed words
