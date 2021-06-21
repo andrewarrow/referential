@@ -18,7 +18,7 @@ func main() {
 		fmt.Println("Case 2. bitclout.com api with username, READ-ONLY access")
 		fmt.Println("Case 3. query a copy of the complete badgerdb database (>70 GB)")
 		fmt.Println("Case 4. import badgerdb database to sqlite, then query sqlite")
-		fmt.Println("Case 5. bitclout.com api with username, WRITE access")
+		fmt.Println("Case 5. bitclout.com api with seed words, WRITE access")
 		fmt.Println("")
 		fmt.Println("./referential --case1")
 		fmt.Println("./referential --case2")
