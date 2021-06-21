@@ -23,7 +23,8 @@ func main() {
 		fmt.Println("./referential --case1")
 		fmt.Println("./referential --case2")
 		fmt.Println("./referential --case3")
-		fmt.Println("./referential --case4")
+		fmt.Println("./referential --case4a")
+		fmt.Println("./referential --case4b")
 		fmt.Println("")
 		return
 	}
@@ -50,15 +51,38 @@ func main() {
 		// you'll have to spend 24 hours first downloading it or
 		// get a copy from someone who already did that
 		cloutcli.PrintAllPostsFromBadger("../acopy/badgerdb")
-	} else if flavor == "--case4" {
+	} else if flavor == "--case4a" {
 		// case 4, import parts of that complete badgerdb database into a local
-		// sqlite database first, then query that sqlite database
+		// sqlite database first
 		cloutcli.ImportFromBadgerToSqlite("../acopy/badgerdb")
+	} else if flavor == "--case4b" {
+		//then query that sqlite database
 		cloutcli.QuerySqlitePosts("andrew")
-	}
+	} else if flavor == "--case5" {
+		// case 5, username with write access
+		// to post a message, cli needs private key i.e seed words
+		// temporarily set an ENVIRONEMENT_VARIABLE named "CLOUTCLI_SEED_WORDS"
+		// don't just type export CLOUTCLI_SEED_WORDS=words from bash prompt
+		// that would go into your bash history
+		// instead edit your .bash_profile or equivalent and place the
+		// export command there and save the file.
 
-	// case 5, username with write access
-	// to post a message or send coin, cli needs private key i.e seed words
+		// open a new terminal - this is a "hot terminal window"
+		// think of it like taking the safety off a gun, at some point you want to
+		// put the safety back on. And you can do this by editing that .bash_profile
+		// file again and removing the line you added.
+		// close the hot terminal window(s) and take a deep breath.
+		//
+		// but while your terminal is hot, run --case5 and it will post
+		// a message from the account provided in CLOUTCLI_SEED_WORDS.
+		words := os.Getenv("CLOUTCLI_SEED_WORDS")
+		if words == "" {
+			fmt.Println("CLOUTCLI_SEED_WORDS not found.")
+			return
+		}
+		//result := cloutcli.SimplePost(words, "hey @andrewarrow this post was done from terminal using https://github.com/andrewarrow/referential")
+		//fmt.Println(result)
+	}
 
 }
 

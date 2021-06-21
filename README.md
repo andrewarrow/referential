@@ -17,4 +17,6 @@ Case 5. bitclout.com api with username, WRITE access
 ./referential --case1
 ./referential --case2
 ./referential --case3
+./referential --case4a
+./referential --case4b
 ```
