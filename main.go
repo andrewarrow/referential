@@ -9,8 +9,10 @@ import (
 func main() {
 	fmt.Println("list messages from the global feed...")
 
-	list := cloutcli.GetMessages()
+	list := cloutcli.GlobalPosts()
 
-	fmt.Println(list)
+	for _, post := range list {
+		fmt.Println(post)
+	}
 
 }
