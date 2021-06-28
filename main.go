@@ -51,6 +51,7 @@ func main() {
 		// case 3, query a copy of the complete badgerdb database (>70 GB)
 		// you'll have to spend 24 hours first downloading it or
 		// get a copy from someone who already did that
+		cloutcli.Tables = "post,profile"
 		cloutcli.PrintAllPostsFromBadger("../acopy/badgerdb")
 	} else if flavor == "--case4a" {
 		// case 4, import parts of that complete badgerdb database into a local
